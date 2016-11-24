@@ -37,10 +37,14 @@ Install Docker Engine
 - [Ubuntu Installation](https://docs.docker.com/v1.8/installation/ubuntulinux/)
 
 Build a caffe docker image (CPU) 
+
 ```
 docker build -t caffe:cpu https://raw.githubusercontent.com/BVLC/caffe/master/docker/standalone/cpu/Dockerfile
 ```
-
+or use local mode(使用本地Dockerfile文件，修改系统源和python安装包源，因为连接国外网络超时,将Dockerfile放到docker文件夹中)
+```
+docker build -t caffe:cpu ./docker
+```
 Check the caffe installation
 ```
 docker run caffe:cpu caffe --version
